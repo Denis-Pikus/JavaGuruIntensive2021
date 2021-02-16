@@ -1,28 +1,0 @@
-
-Adpdev.homework_1.operations.Calculator#randomNumbersGenerator()[I{
-qE:/IdeaProjects/JavaGuruIntensive2021/IntensiveJavaGuru/src/main/java/dpdev/homework_1/operations/Calculator.java (/"1*ï
-1{
-qE:/IdeaProjects/JavaGuruIntensive2021/IntensiveJavaGuru/src/main/java/dpdev/homework_1/operations/Calculator.java (ª§
-{
-qE:/IdeaProjects/JavaGuruIntensive2021/IntensiveJavaGuru/src/main/java/dpdev/homework_1/operations/Calculator.java (
-%0java.util.Random"java.util.Random¼
-¹
-{
-qE:/IdeaProjects/JavaGuruIntensive2021/IntensiveJavaGuru/src/main/java/dpdev/homework_1/operations/Calculator.java (
-%1"java.util.Random#<init>()V*
-
-%0java.util.Random‘Ž
-{
-qE:/IdeaProjects/JavaGuruIntensive2021/IntensiveJavaGuru/src/main/java/dpdev/homework_1/operations/Calculator.java (* 
-%2java.util.stream.IntStream"6java.util.Random#ints(JII)Ljava/util/stream/IntStream;*
-
-%0java.util.Random*2*2*22	ints(JII)äá
-{
-qE:/IdeaProjects/JavaGuruIntensive2021/IntensiveJavaGuru/src/main/java/dpdev/homework_1/operations/Calculator.java (4
-%3int[]"&java.util.stream.IntStream#toArray()[I*"
- 
-%2java.util.stream.IntStream2	toArray()"…
-{
-qE:/IdeaProjects/JavaGuruIntensive2021/IntensiveJavaGuru/src/main/java/dpdev/homework_1/operations/Calculator.java (5
-""B*"(
-&dpdev.homework_1.operations.Calculator

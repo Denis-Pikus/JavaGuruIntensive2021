@@ -12,7 +12,6 @@ public class ArrayService {
     }
 
     public void fillRandomly(int[] array) {
-        //array = new Random().ints(array.length, 0, 101).toArray();
         for (int i = 0; i < array.length; i++) {
             array[i] = new Random().nextInt(101);
         }

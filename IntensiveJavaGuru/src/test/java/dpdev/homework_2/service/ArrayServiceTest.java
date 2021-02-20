@@ -71,7 +71,7 @@ class ArrayServiceTest {
         double expected = 0.0;
         int[] array = new int[0];
         double actual = arrayService.avg(array);
-        assertEquals(expected, actual, 0.001);
+        assertEquals(expected, actual);
         logger.info("Avg array {} is: {}", Arrays.toString(array), arrayService.avg(array));
     }
 

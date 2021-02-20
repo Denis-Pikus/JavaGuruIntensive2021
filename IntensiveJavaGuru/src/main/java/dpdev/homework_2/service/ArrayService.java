@@ -30,6 +30,7 @@ public class ArrayService {
     }
 
     public double avg(int[] array) {
+        if (array.length == 0) return 0;
         return (double) sum(array) / array.length;
     }
 

@@ -67,6 +67,15 @@ class ArrayServiceTest {
     }
 
     @Test
+    void avgEmptyArray() {
+        double expected = 0.0;
+        int[] array = new int[0];
+        double actual = arrayService.avg(array);
+        assertEquals(expected, actual, 0.001);
+        logger.info("Avg array {} is: {}", Arrays.toString(array), arrayService.avg(array));
+    }
+
+    @Test
     void sort() {
         int[] testArray = {2, 0, 1, 5};
         int[] expected = {0, 1, 2, 5};

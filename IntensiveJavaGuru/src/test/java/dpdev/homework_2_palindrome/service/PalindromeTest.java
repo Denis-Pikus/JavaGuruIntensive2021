@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PalindromeTest {
     Logger logger = LoggerFactory.getLogger(PalindromeTest.class);
@@ -34,7 +34,16 @@ public class PalindromeTest {
     }
 
     @Test
-    public void testIsPalindrome() {
+    public void testIsPalindromeTrue() {
+        String testString = "-1 /2 *, 21!";
+        assertTrue(palindrome.isPalindrome(testString));
+        logger.info("Input string is palindrome.");
+    }
 
+    @Test
+    public void testIsPalindromeFalse() {
+        String testString = "-1 /2 *, 21!1";
+        assertFalse(palindrome.isPalindrome(testString));
+        logger.info("Input string isn't palindrome.");
     }
 }

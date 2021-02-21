@@ -19,5 +19,6 @@
 *.tar.gz
 *.rar
 *.properties
-
+/.idea
+/target
 hs_err_pid*

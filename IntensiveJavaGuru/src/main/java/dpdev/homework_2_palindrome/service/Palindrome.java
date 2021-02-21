@@ -13,7 +13,7 @@ public class Palindrome {
         return Arrays.equals(array, reverseArray);
     }
 
-    private char [] deleteNotLettersAndDigitSymbols(String str){
+    public char [] deleteNotLettersAndDigitSymbols(String str){
         StringBuilder builder = new StringBuilder();
         for(char c : str.toCharArray())
             if(Character.isLetterOrDigit(c))
@@ -21,7 +21,7 @@ public class Palindrome {
         return builder.toString().toCharArray();
     }
 
-    private void swap(char[] array){
+    public void swap(char[] array){
         int i = 0;
         int j = array.length - 1;
         char temp;

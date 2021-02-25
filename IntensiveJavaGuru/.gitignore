@@ -18,6 +18,5 @@
 *.zip
 *.tar.gz
 *.rar
-*.properties
 /.idea
 /target

@@ -1,13 +1,7 @@
-package dpdev.homework_1.operations;
-
-
-import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest{
+
     static Logger logger = LoggerFactory.getLogger(CalculatorTest.class);
 
     @Test
@@ -42,7 +36,8 @@ public class CalculatorTest{
 
     @Test
     public void testDivideByZero() {
-        assertThrows(ArithmeticException.class, () ->Calculator.divide(5, 0));
+        assertThrows(ArithmeticException.class, () -> Calculator.divide(5, 0));
+        logger.info("Division by zero!");
     }
 
     @Test

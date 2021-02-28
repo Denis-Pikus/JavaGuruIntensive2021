@@ -1,11 +1,13 @@
 package dpdev.homework_1.operations;
 
-import junit.framework.TestCase;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class CalculatorTest extends TestCase {
+import static org.junit.jupiter.api.Assertions.*;
+
+public class CalculatorTest{
     static Logger logger = LoggerFactory.getLogger(CalculatorTest.class);
 
     @Test
@@ -38,9 +40,9 @@ public class CalculatorTest extends TestCase {
         logger.info("{} * {} = {}", a, b, a * b);
     }
 
-    @Test(expected=java.lang.ArithmeticException.class)
+    @Test
     public void testDivideByZero() {
-        Calculator.divide(5, 0);
+        assertThrows(ArithmeticException.class, () ->Calculator.divide(5, 0));
     }
 
     @Test

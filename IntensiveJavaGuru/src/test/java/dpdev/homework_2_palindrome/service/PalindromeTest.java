@@ -1,7 +1,6 @@
 package dpdev.homework_2_palindrome.service;
 
 import org.junit.jupiter.api.Test;
-import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

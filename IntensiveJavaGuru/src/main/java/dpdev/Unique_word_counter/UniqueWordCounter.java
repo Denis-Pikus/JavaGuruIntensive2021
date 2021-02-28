@@ -24,7 +24,7 @@ public class UniqueWordCounter {
 
     public void printWordsFrequency(){
         for (Map.Entry<String, Integer> entry: map.entrySet()) {
-            System.out.println(entry.getValue() + " - " + entry.getKey());
+            System.out.println(entry.getKey() + " = " + entry.getValue());
         }
     }
 }

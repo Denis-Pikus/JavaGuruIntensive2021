@@ -2,7 +2,6 @@ package dpdev.shop;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,12 +23,9 @@ public class Shop {
 
     public void removeProduct(Product product) {
         if (product == null) return;
-        Iterator<Product> productIterator = productList.iterator();
-        while (productIterator.hasNext()) {
-            Product product1 = productIterator.next();
-            if (product1.equals(product)) {
-                productList.remove(product);
-            }
+        for (int i = 0; i < productList.size(); i++) {
+            if (productList.get(i).equals(product))
+                productList.remove(i);
         }
     }
 
@@ -45,8 +41,10 @@ public class Shop {
 
     public List<Product> findProductByRangeOfPrice(BigDecimal minPriceRange, BigDecimal maxPriceRange) {
         return productList.stream()
-                .filter(p -> p.getPrice().compareTo(minPriceRange) != 1
-                        || p.getPrice().compareTo(maxPriceRange) != -1)
+                .filter(p -> p.getPrice().compareTo(minPriceRange) == 0
+                        || p.getPrice().compareTo(minPriceRange) == 1
+                        && p.getPrice().compareTo(maxPriceRange) == 0
+                        || p.getPrice().compareTo(maxPriceRange) == -1)
                 .collect(Collectors.toList());
     }
 

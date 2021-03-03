@@ -14,18 +14,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ShopTest {
     Logger logger = LoggerFactory.getLogger(ShopTest.class);
-    Shop shop = new Shop();;
+    Shop shop = new Shop();
+    ;
+
     @BeforeEach
     void setup() {
-        List<Product> list = List.of(
-        new Product("mushrooms", new BigDecimal("3.0")),
-        new Product("coconut", new BigDecimal("5.0")),
-        new Product("apple", new BigDecimal("2.0")),
-        new Product("mango", new BigDecimal("10.0"))
-        );
-        shop.setProductList(list);
+        shop.getProductList().add(new Product("mushrooms", new BigDecimal("3.0")));
+        shop.getProductList().add(new Product("coconut", new BigDecimal("5.0")));
+        shop.getProductList().add(new Product("apple", new BigDecimal("2.0")));
+        shop.getProductList().add(new Product("mango", new BigDecimal("10.0")));
         logger.info(shop.getProductList().toString());
-
     }
 
     @Test
@@ -38,7 +36,7 @@ class ShopTest {
 
     @Test
     void addProductNull() {
-        int expected = 0;
+        int expected = 4;
         logger.info(shop.getProductList().toString());
         shop.addProduct(null);
         assertEquals(expected, shop.getProductList().size());
@@ -47,20 +45,19 @@ class ShopTest {
 
     @Test
     void removeProduct() {
-        int expected = 1;
-        shop.addProduct(new Product("mushrooms", new BigDecimal("3.0")));
-        shop.addProduct(new Product("coconut", new BigDecimal("5.0")));
-        logger.info(shop.getProductList().toString());
-        shop.removeProduct(new Product("mushrooms", new BigDecimal("3.0")));
+        int expected = 3;
+        Product product = new Product("mushrooms", new BigDecimal("3.0"));
+        logger.info("current list size = {}", shop.getProductList().size());
+        shop.removeProduct(product);
         assertEquals(expected, shop.getProductList().size());
         logger.info(shop.getProductList().toString());
+        logger.info("result list size = {}", shop.getProductList().size());
+
     }
 
     @Test
     void removeProductNull() {
-        int expected = 1;
-        shop.addProduct(new Product("mushrooms", new BigDecimal("3.0")));
-        logger.info(shop.getProductList().toString());
+        int expected = 4;
         shop.removeProduct(null);
         assertEquals(expected, shop.getProductList().size());
         logger.info(shop.getProductList().toString());
@@ -68,10 +65,6 @@ class ShopTest {
 
     @Test
     void findProductByName() {
-        shop.addProduct(new Product("mushrooms", new BigDecimal("3.0")));
-        shop.addProduct(new Product("coconut", new BigDecimal("5.0")));
-        shop.addProduct(new Product("apple", new BigDecimal("2.0")));
-        shop.addProduct(new Product("mango", new BigDecimal("10.0")));
         logger.info(shop.getProductList().toString());
         Product product = shop.getProductList().get(2);
         Product product1 = shop.findProductByName("apple");
@@ -82,7 +75,16 @@ class ShopTest {
 
     @Test
     void findProductByRangeOfPrice() {
-
+        Product[] arrayOfProduct = new Product[3];
+        for (int i = 0; i < shop.getProductList().size() - 1; i++) {
+            arrayOfProduct[i] = shop.getProductList().get(i);
+        }
+        logger.info("expected list = {}", Arrays.toString(arrayOfProduct));
+        List<Product> listOfSearchProduct = shop
+                .findProductByRangeOfPrice(new BigDecimal("2.0"), new BigDecimal("5.0"));
+        Product[] result = listOfSearchProduct.toArray(new Product[listOfSearchProduct.size()]);
+        assertArrayEquals(arrayOfProduct, result);
+        logger.info("actual list = {}", Arrays.toString(result));
 
     }
 }

@@ -25,4 +25,17 @@ class PrimeNumbersTest {
         assertEquals(expected, actual);
         log.info("Sum of prime numbers of number 10 equals {}", actual);
     }
+
+    @Test
+    void isPrimeNumberTrue() {
+        assertTrue(primeNumbers.isPrimeNumber(3));
+        log.info("3 is prime number.");
+    }
+
+    @Test
+    void isPrimeNumberFalse() {
+        assertFalse(primeNumbers.isPrimeNumber(4));
+        log.info("4 isn't prime number.");
+    }
+
 }
